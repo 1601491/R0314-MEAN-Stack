@@ -1,0 +1,35 @@
+<style>
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #313131;
+    text-align: left;
+    padding: 8px;
+}
+</style>
+<div class="midBox2">
+  <br>
+        <table>
+          <tr>
+            <th>Id</th>
+            <th>Username</th>
+            <th>Country</th>
+            <th>Date</th>
+            <th>Message</th>
+          </tr>
+
+          <% tag.forEach(function(tag) { %>
+          <tr>
+            <td><%= tag.id %></td>
+            <td><%= tag.username %></td>
+            <td><%= tag.country %></td>
+            <td><%= tag.date %></td>
+            <td><%= tag.message %></td>
+          </tr>
+          <% }); %>
+        </table>
+
+</div>
