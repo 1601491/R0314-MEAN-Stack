@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <title>Star Wars Sitaatit</title>
+  
+  <!-- Sivun tyylimuokkaukset -->
+  
+  <STYLE>
+  
+  body {
+  max-width:700px;
+  margin:auto;
+  background-color: black;
+  color:#FFD700;
+  font-family: 'distant galaxy';
+  font-size:20px;
+  } 
+  
+  #intro {
+  max-width:500px;
+  margin:auto;
+  font-family: arial;
+  font-style: italic;
+  font-family: 'distant galaxy';
+  text-align: center;
+  }
+  
+  #logo {
+  max-width:300px;
+  margin:auto ;
+  }
+  
+  #form {
+  max-width:380px;
+  margin:auto ;
+  }
+  
+  button {
+  font-family: 'calibri';
+  border-radius: 5px;
+  border-color: black;
+  }
+  
+  button:hover {
+  background-color: #FFD700;
+  border-color: white;
+  }
+  
+  input {
+  font-family: 'calibri';
+  border-radius: 5px;
+  border-color: black;
+  }
+  
+  input:hover {
+  border-color: white;
+  }
+  
+  </style>
+</head>
+<body>
+
+<!-- Sivun logo -->
+
+<div id="logo">
+<img src= 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Star_Wars_Logo.svg/1280px-Star_Wars_Logo.svg.png' width= 300px>
+
+
+</div>
+	<div id="intro">
+  Tunnettuja sitaatteja Star Warsista. Tänne voi myös lisäillä uusia sitaatteja, jotka tallentuvat tietokantaan.
+  </div><br><hr>
+
+  <!-- For loop joka näyttää tiedot luettelomuodossa -->
+  
+  <div id="main">
+  
+  <ul class="quotes">
+  <% for(var i=0; i<quotes.length; i++) {%>
+    <li class="quote">
+      <span><%= quotes[i].name %>: </span>
+      <span>"<%= quotes[i].quote %>"</span>
+    </li>
+  <% } %>
+  </ul>
+  
+  </div>
+
+  <!-- Lomake jolla lähetetään tietokantaan luodut sitaatit -->
+  
+  <div id="form">
+  
+  <form action="/quotes" method="POST">
+    <input type="text" placeholder="Nimi" name="name">
+    <input type="text" placeholder="Sitaatti" name="quote">
+    <button type="submit">Tallenna</button>
+  </form>
+  
+  </div>
+</body>
+</html>
